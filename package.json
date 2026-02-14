@@ -1,0 +1,24 @@
+{
+  "name": "word-analyzer",
+  "version": "1.0.0",
+  "description": "A powerful text analysis tool that provides instant statistics about your writing",
+  "main": "index.html",
+  "scripts": {
+    "start": "python3 -m http.server 8000 || python -m http.server 8000",
+    "launch": "npm start",
+    "open": "npm start"
+  },
+  "keywords": [
+    "word-counter",
+    "text-analyzer",
+    "character-counter",
+    "reading-time",
+    "text-statistics"
+  ],
+  "author": "",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zrobertson350-boop/ultron"
+  }
+}
