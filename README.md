@@ -43,14 +43,14 @@ npm start
 
 ### Option 3: Using Python directly
 
-**Python 3:**
+**Python 3 (Recommended):**
 ```bash
 python3 -m http.server 8000
 ```
 
-**Python 2:**
+**Or if 'python' points to Python 3:**
 ```bash
-python -m SimpleHTTPServer 8000
+python -m http.server 8000
 ```
 
 ### Option 4: Open directly in browser

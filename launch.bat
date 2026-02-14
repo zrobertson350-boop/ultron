@@ -2,6 +2,8 @@
 REM Word Analyzer Launch Script for Windows
 REM Simple script to launch the Word Analyzer website
 
+SET PORT=8000
+
 echo.
 echo 🚀 Launching Word Analyzer...
 echo.
@@ -10,11 +12,11 @@ REM Check if Python is available
 python --version >nul 2>&1
 if %errorlevel% equ 0 (
     echo Starting server with Python...
-    echo 📝 Word Analyzer will be available at: http://localhost:8000
+    echo 📝 Word Analyzer will be available at: http://localhost:%PORT%
     echo.
     echo Press Ctrl+C to stop the server
     echo.
-    python -m http.server 8000
+    python -m http.server %PORT%
 ) else (
     echo ❌ Error: Python is not installed.
     echo.

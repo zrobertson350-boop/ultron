@@ -4,9 +4,7 @@
   "description": "A powerful text analysis tool that provides instant statistics about your writing",
   "main": "index.html",
   "scripts": {
-    "start": "python3 -m http.server 8000 || python -m http.server 8000",
-    "launch": "npm start",
-    "open": "npm start"
+    "start": "python3 -m http.server 8000 || python -m http.server 8000"
   },
   "keywords": [
     "word-counter",
