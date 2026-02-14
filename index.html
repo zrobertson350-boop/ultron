@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Ultron - Advanced Technology Solutions">
-    <title>Ultron - Welcome</title>
+    <meta name="description" content="Word Analyzer - Analyze your text with powerful word tools">
+    <title>Word Analyzer - Text Statistics Tool</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -12,13 +12,12 @@
         <nav class="navbar">
             <div class="container">
                 <div class="logo">
-                    <h1>ULTRON</h1>
+                    <h1>📝 Word Analyzer</h1>
                 </div>
                 <ul class="nav-menu">
-                    <li><a href="#home" class="nav-link">Home</a></li>
-                    <li><a href="#about" class="nav-link">About</a></li>
+                    <li><a href="#home" class="nav-link">Analyzer</a></li>
                     <li><a href="#features" class="nav-link">Features</a></li>
-                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                    <li><a href="#about" class="nav-link">About</a></li>
                 </ul>
                 <div class="hamburger">
                     <span></span>
@@ -33,20 +32,70 @@
         <section id="home" class="hero">
             <div class="container">
                 <div class="hero-content">
-                    <h2 class="hero-title">Welcome to Ultron</h2>
-                    <p class="hero-subtitle">Advanced Technology Solutions for the Modern World</p>
-                    <button class="cta-button">Get Started</button>
+                    <h2 class="hero-title">Analyze Your Words</h2>
+                    <p class="hero-subtitle">Get instant statistics and insights about your text</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="analyzer" class="analyzer">
+            <div class="container">
+                <div class="analyzer-wrapper">
+                    <div class="textarea-container">
+                        <textarea id="textInput" placeholder="Type or paste your text here to analyze..." class="text-input"></textarea>
+                        <div class="textarea-actions">
+                            <button id="clearBtn" class="action-button">Clear Text</button>
+                            <button id="copyStatsBtn" class="action-button">Copy Statistics</button>
+                        </div>
+                    </div>
+                    <div class="stats-container">
+                        <h3 class="stats-title">Text Statistics</h3>
+                        <div class="stats-grid">
+                            <div class="stat-card">
+                                <div class="stat-label">Words</div>
+                                <div class="stat-value" id="wordCount">0</div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-label">Characters</div>
+                                <div class="stat-value" id="charCount">0</div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-label">Characters (no spaces)</div>
+                                <div class="stat-value" id="charNoSpaceCount">0</div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-label">Sentences</div>
+                                <div class="stat-value" id="sentenceCount">0</div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-label">Paragraphs</div>
+                                <div class="stat-value" id="paragraphCount">0</div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-label">Reading Time</div>
+                                <div class="stat-value" id="readingTime">0 min</div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-label">Avg Word Length</div>
+                                <div class="stat-value" id="avgWordLength">0</div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-label">Longest Word</div>
+                                <div class="stat-value" id="longestWord">-</div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
 
         <section id="about" class="about">
             <div class="container">
-                <h2 class="section-title">About Ultron</h2>
+                <h2 class="section-title">About Word Analyzer</h2>
                 <p class="section-text">
-                    Ultron represents the cutting edge of technological innovation. 
-                    We provide advanced solutions that push the boundaries of what's possible, 
-                    delivering excellence in every project we undertake.
+                    Word Analyzer is a powerful, free text analysis tool that provides instant statistics
+                    about your writing. Whether you're a writer, student, or professional, get comprehensive
+                    insights about word count, character count, reading time, and more.
                 </p>
             </div>
         </section>
@@ -56,52 +105,35 @@
                 <h2 class="section-title">Key Features</h2>
                 <div class="features-grid">
                     <div class="feature-card">
-                        <div class="feature-icon">🚀</div>
-                        <h3>Fast Performance</h3>
-                        <p>Lightning-fast processing and optimal performance for all your needs.</p>
+                        <div class="feature-icon">📊</div>
+                        <h3>Real-time Analysis</h3>
+                        <p>Get instant word and character counts as you type or paste text.</p>
                     </div>
                     <div class="feature-card">
                         <div class="feature-icon">🔒</div>
-                        <h3>Secure</h3>
-                        <p>Enterprise-grade security to protect your data and operations.</p>
+                        <h3>Privacy First</h3>
+                        <p>Your text never leaves your browser - all processing happens locally.</p>
                     </div>
                     <div class="feature-card">
-                        <div class="feature-icon">⚡</div>
-                        <h3>Powerful</h3>
-                        <p>Advanced capabilities that scale with your growing demands.</p>
+                        <div class="feature-icon">⏱️</div>
+                        <h3>Reading Time</h3>
+                        <p>Estimate how long it takes to read your content at average speed.</p>
                     </div>
                     <div class="feature-card">
-                        <div class="feature-icon">🎯</div>
-                        <h3>Reliable</h3>
-                        <p>Dependable solutions you can count on, day in and day out.</p>
+                        <div class="feature-icon">📝</div>
+                        <h3>Detailed Stats</h3>
+                        <p>Track sentences, paragraphs, word length, and more metrics.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="contact" class="contact">
-            <div class="container">
-                <h2 class="section-title">Get in Touch</h2>
-                <form class="contact-form" id="contactForm">
-                    <div class="form-group">
-                        <input type="text" id="name" name="name" placeholder="Your Name" required>
-                    </div>
-                    <div class="form-group">
-                        <input type="email" id="email" name="email" placeholder="Your Email" required>
-                    </div>
-                    <div class="form-group">
-                        <textarea id="message" name="message" rows="5" placeholder="Your Message" required></textarea>
-                    </div>
-                    <button type="submit" class="submit-button">Send Message</button>
-                </form>
-                <div id="formMessage" class="form-message"></div>
-            </div>
-        </section>
+
     </main>
 
     <footer>
         <div class="container">
-            <p>&copy; 2026 Ultron. All rights reserved.</p>
+            <p>&copy; 2026 Word Analyzer. All rights reserved. | Free text analysis tool for everyone.</p>
         </div>
     </footer>
 

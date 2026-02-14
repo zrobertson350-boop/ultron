@@ -21,7 +21,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         e.preventDefault();
         const target = document.querySelector(this.getAttribute('href'));
         if (target) {
-            const offset = 80; // Height of fixed navbar
+            const offset = 80;
             const targetPosition = target.offsetTop - offset;
             window.scrollTo({
                 top: targetPosition,
@@ -29,38 +29,6 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             });
         }
     });
-});
-
-// Form submission handler
-const contactForm = document.getElementById('contactForm');
-const formMessage = document.getElementById('formMessage');
-
-contactForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-    
-    // Get form values
-    const name = document.getElementById('name').value;
-    const email = document.getElementById('email').value;
-    const message = document.getElementById('message').value;
-    
-    // Simple validation
-    if (name && email && message) {
-        // Simulate form submission
-        formMessage.textContent = 'Thank you for your message! We will get back to you soon.';
-        formMessage.className = 'form-message success';
-        
-        // Reset form
-        contactForm.reset();
-        
-        // Hide message after 5 seconds
-        setTimeout(() => {
-            formMessage.style.display = 'none';
-            formMessage.className = 'form-message';
-        }, 5000);
-    } else {
-        formMessage.textContent = 'Please fill in all fields.';
-        formMessage.className = 'form-message error';
-    }
 });
 
 // Add scroll effect to navbar
@@ -97,18 +65,128 @@ document.querySelectorAll('.feature-card').forEach(card => {
     observer.observe(card);
 });
 
-// CTA Button interaction
-const ctaButton = document.querySelector('.cta-button');
-if (ctaButton) {
-    ctaButton.addEventListener('click', () => {
-        const contactSection = document.getElementById('contact');
-        if (contactSection) {
-            const offset = 80;
-            const targetPosition = contactSection.offsetTop - offset;
-            window.scrollTo({
-                top: targetPosition,
-                behavior: 'smooth'
-            });
-        }
-    });
+// Word Analyzer Functionality
+const textInput = document.getElementById('textInput');
+const wordCount = document.getElementById('wordCount');
+const charCount = document.getElementById('charCount');
+const charNoSpaceCount = document.getElementById('charNoSpaceCount');
+const sentenceCount = document.getElementById('sentenceCount');
+const paragraphCount = document.getElementById('paragraphCount');
+const readingTime = document.getElementById('readingTime');
+const avgWordLength = document.getElementById('avgWordLength');
+const longestWord = document.getElementById('longestWord');
+const clearBtn = document.getElementById('clearBtn');
+const copyStatsBtn = document.getElementById('copyStatsBtn');
+
+// Function to count words
+function countWords(text) {
+    const trimmed = text.trim();
+    if (trimmed === '') return 0;
+    return trimmed.split(/\s+/).length;
 }
+
+// Function to count sentences
+function countSentences(text) {
+    if (text.trim() === '') return 0;
+    const sentences = text.match(/[.!?]+/g);
+    return sentences ? sentences.length : 0;
+}
+
+// Function to count paragraphs
+function countParagraphs(text) {
+    if (text.trim() === '') return 0;
+    const paragraphs = text.split(/\n\n+/).filter(para => para.trim() !== '');
+    return paragraphs.length;
+}
+
+// Function to calculate reading time (average 200 words per minute)
+function calculateReadingTime(wordCount) {
+    const minutes = Math.ceil(wordCount / 200);
+    return minutes;
+}
+
+// Function to get average word length
+function getAverageWordLength(text) {
+    const words = text.trim().split(/\s+/).filter(word => word.length > 0);
+    if (words.length === 0) return 0;
+    const totalLength = words.reduce((sum, word) => sum + word.length, 0);
+    return (totalLength / words.length).toFixed(1);
+}
+
+// Function to get longest word
+function getLongestWord(text) {
+    const words = text.trim().split(/\s+/).filter(word => word.length > 0);
+    if (words.length === 0) return '-';
+    const longest = words.reduce((max, word) => word.length > max.length ? word : max, '');
+    return longest.length > 15 ? longest.substring(0, 15) + '...' : longest;
+}
+
+// Update statistics
+function updateStats() {
+    const text = textInput.value;
+    
+    // Word count
+    const words = countWords(text);
+    wordCount.textContent = words;
+    
+    // Character count
+    charCount.textContent = text.length;
+    
+    // Character count without spaces
+    charNoSpaceCount.textContent = text.replace(/\s/g, '').length;
+    
+    // Sentence count
+    sentenceCount.textContent = countSentences(text);
+    
+    // Paragraph count
+    paragraphCount.textContent = countParagraphs(text);
+    
+    // Reading time
+    const minutes = calculateReadingTime(words);
+    readingTime.textContent = minutes === 1 ? '1 min' : `${minutes} min`;
+    
+    // Average word length
+    avgWordLength.textContent = getAverageWordLength(text);
+    
+    // Longest word
+    longestWord.textContent = getLongestWord(text);
+}
+
+// Event listeners for text input
+textInput.addEventListener('input', updateStats);
+textInput.addEventListener('paste', () => {
+    setTimeout(updateStats, 10);
+});
+
+// Clear button
+clearBtn.addEventListener('click', () => {
+    textInput.value = '';
+    updateStats();
+    textInput.focus();
+});
+
+// Copy statistics button
+copyStatsBtn.addEventListener('click', () => {
+    const stats = `Text Statistics:
+Words: ${wordCount.textContent}
+Characters: ${charCount.textContent}
+Characters (no spaces): ${charNoSpaceCount.textContent}
+Sentences: ${sentenceCount.textContent}
+Paragraphs: ${paragraphCount.textContent}
+Reading Time: ${readingTime.textContent}
+Average Word Length: ${avgWordLength.textContent}
+Longest Word: ${longestWord.textContent}`;
+    
+    navigator.clipboard.writeText(stats).then(() => {
+        const originalText = copyStatsBtn.textContent;
+        copyStatsBtn.textContent = 'Copied!';
+        setTimeout(() => {
+            copyStatsBtn.textContent = originalText;
+        }, 2000);
+    }).catch(err => {
+        console.error('Failed to copy stats:', err);
+    });
+});
+
+// Initialize stats on page load
+updateStats();
