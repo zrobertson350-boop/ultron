@@ -1,17 +1,17 @@
 #!/bin/bash
 
-# Word Analyzer Launch Script
-# Simple script to launch the Word Analyzer website
+# Ultron Website Launch Script
+# Simple script to launch the Ultron website
 
 PORT=8000
 
-echo "🚀 Launching Word Analyzer..."
+echo "🚀 Launching Ultron Website..."
 echo ""
 
 # Check if Python 3 is available
 if command -v python3 &> /dev/null; then
     echo "Starting server with Python 3..."
-    echo "📝 Word Analyzer will be available at: http://localhost:${PORT}"
+    echo "⚡ Ultron will be available at: http://localhost:${PORT}"
     echo ""
     echo "Press Ctrl+C to stop the server"
     echo ""
@@ -19,7 +19,7 @@ if command -v python3 &> /dev/null; then
 elif command -v python &> /dev/null; then
     # Fallback to python if python3 is not available
     echo "Starting server with Python..."
-    echo "📝 Word Analyzer will be available at: http://localhost:${PORT}"
+    echo "⚡ Ultron will be available at: http://localhost:${PORT}"
     echo ""
     echo "Press Ctrl+C to stop the server"
     echo ""

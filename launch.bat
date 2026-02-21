@@ -1,18 +1,18 @@
 @echo off
-REM Word Analyzer Launch Script for Windows
-REM Simple script to launch the Word Analyzer website
+REM Ultron Website Launch Script for Windows
+REM Simple script to launch the Ultron website
 
 SET PORT=8000
 
 echo.
-echo 🚀 Launching Word Analyzer...
+echo 🚀 Launching Ultron Website...
 echo.
 
 REM Check if Python is available
 python --version >nul 2>&1
 if %errorlevel% equ 0 (
     echo Starting server with Python...
-    echo 📝 Word Analyzer will be available at: http://localhost:%PORT%
+    echo ⚡ Ultron will be available at: http://localhost:%PORT%
     echo.
     echo Press Ctrl+C to stop the server
     echo.
