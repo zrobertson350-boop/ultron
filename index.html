@@ -3,139 +3,358 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Word Analyzer - Analyze your text with powerful word tools">
-    <title>Word Analyzer - Text Statistics Tool</title>
+    <meta name="description" content="Ultron - Innovation Through Technology. Building the future with cutting-edge solutions.">
+    <meta name="keywords" content="technology, innovation, software, development, solutions">
+    <title>Ultron - Innovation Through Technology</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
-        <nav class="navbar">
-            <div class="container">
-                <div class="logo">
-                    <h1>📝 Word Analyzer</h1>
-                </div>
-                <ul class="nav-menu">
-                    <li><a href="#home" class="nav-link">Analyzer</a></li>
-                    <li><a href="#features" class="nav-link">Features</a></li>
-                    <li><a href="#about" class="nav-link">About</a></li>
-                </ul>
-                <div class="hamburger">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-            </div>
-        </nav>
-    </header>
-
-    <main>
-        <section id="home" class="hero">
-            <div class="container">
-                <div class="hero-content">
-                    <h2 class="hero-title">Analyze Your Words</h2>
-                    <p class="hero-subtitle">Get instant statistics and insights about your text</p>
-                </div>
-            </div>
-        </section>
-
-        <section id="analyzer" class="analyzer">
-            <div class="container">
-                <div class="analyzer-wrapper">
-                    <div class="textarea-container">
-                        <textarea id="textInput" placeholder="Type or paste your text here to analyze..." class="text-input"></textarea>
-                        <div class="textarea-actions">
-                            <button id="clearBtn" class="action-button">Clear Text</button>
-                            <button id="copyStatsBtn" class="action-button">Copy Statistics</button>
-                        </div>
-                    </div>
-                    <div class="stats-container">
-                        <h3 class="stats-title">Text Statistics</h3>
-                        <div class="stats-grid">
-                            <div class="stat-card">
-                                <div class="stat-label">Words</div>
-                                <div class="stat-value" id="wordCount">0</div>
-                            </div>
-                            <div class="stat-card">
-                                <div class="stat-label">Characters</div>
-                                <div class="stat-value" id="charCount">0</div>
-                            </div>
-                            <div class="stat-card">
-                                <div class="stat-label">Characters (no spaces)</div>
-                                <div class="stat-value" id="charNoSpaceCount">0</div>
-                            </div>
-                            <div class="stat-card">
-                                <div class="stat-label">Sentences</div>
-                                <div class="stat-value" id="sentenceCount">0</div>
-                            </div>
-                            <div class="stat-card">
-                                <div class="stat-label">Paragraphs</div>
-                                <div class="stat-value" id="paragraphCount">0</div>
-                            </div>
-                            <div class="stat-card">
-                                <div class="stat-label">Reading Time</div>
-                                <div class="stat-value" id="readingTime">0 min</div>
-                            </div>
-                            <div class="stat-card">
-                                <div class="stat-label">Avg Word Length</div>
-                                <div class="stat-value" id="avgWordLength">0</div>
-                            </div>
-                            <div class="stat-card">
-                                <div class="stat-label">Longest Word</div>
-                                <div class="stat-value" id="longestWord">-</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="about" class="about">
-            <div class="container">
-                <h2 class="section-title">About Word Analyzer</h2>
-                <p class="section-text">
-                    Word Analyzer is a powerful, free text analysis tool that provides instant statistics
-                    about your writing. Whether you're a writer, student, or professional, get comprehensive
-                    insights about word count, character count, reading time, and more.
-                </p>
-            </div>
-        </section>
-
-        <section id="features" class="features">
-            <div class="container">
-                <h2 class="section-title">Key Features</h2>
-                <div class="features-grid">
-                    <div class="feature-card">
-                        <div class="feature-icon">📊</div>
-                        <h3>Real-time Analysis</h3>
-                        <p>Get instant word and character counts as you type or paste text.</p>
-                    </div>
-                    <div class="feature-card">
-                        <div class="feature-icon">🔒</div>
-                        <h3>Privacy First</h3>
-                        <p>Your text never leaves your browser - all processing happens locally.</p>
-                    </div>
-                    <div class="feature-card">
-                        <div class="feature-icon">⏱️</div>
-                        <h3>Reading Time</h3>
-                        <p>Estimate how long it takes to read your content at average speed.</p>
-                    </div>
-                    <div class="feature-card">
-                        <div class="feature-icon">📝</div>
-                        <h3>Detailed Stats</h3>
-                        <p>Track sentences, paragraphs, word length, and more metrics.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-
-    </main>
-
-    <footer>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
         <div class="container">
-            <p>&copy; 2026 Word Analyzer. All rights reserved. | Free text analysis tool for everyone.</p>
+            <div class="nav-wrapper">
+                <a href="#home" class="logo">
+                    <span class="logo-icon">⚡</span>
+                    <span class="logo-text">ULTRON</span>
+                </a>
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="#home" class="nav-link">Home</a></li>
+                    <li><a href="#features" class="nav-link">Features</a></li>
+                    <li><a href="#services" class="nav-link">Services</a></li>
+                    <li><a href="#about" class="nav-link">About</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
+                <button class="hamburger" id="hamburger" aria-label="Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-background">
+            <div class="hero-shape shape-1"></div>
+            <div class="hero-shape shape-2"></div>
+            <div class="hero-shape shape-3"></div>
+        </div>
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    Innovation Through
+                    <span class="gradient-text">Technology</span>
+                </h1>
+                <p class="hero-description">
+                    Empowering businesses with cutting-edge solutions that drive growth, 
+                    efficiency, and digital transformation in the modern era.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#contact" class="btn btn-primary">Get Started</a>
+                    <a href="#features" class="btn btn-secondary">Learn More</a>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <span class="stat-number" data-target="500">0</span>
+                        <span class="stat-label">Projects Completed</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" data-target="250">0</span>
+                        <span class="stat-label">Happy Clients</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" data-target="15">0</span>
+                        <span class="stat-label">Years Experience</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Our Key Features</h2>
+                <p class="section-subtitle">Discover what makes us different</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🚀</div>
+                    <h3 class="feature-title">Lightning Fast</h3>
+                    <p class="feature-description">
+                        Optimized performance ensuring your applications run at peak efficiency.
+                    </p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔒</div>
+                    <h3 class="feature-title">Secure & Reliable</h3>
+                    <p class="feature-description">
+                        Enterprise-grade security with 99.9% uptime guarantee for peace of mind.
+                    </p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🎨</div>
+                    <h3 class="feature-title">Modern Design</h3>
+                    <p class="feature-description">
+                        Beautiful, intuitive interfaces that users love and understand instantly.
+                    </p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📱</div>
+                    <h3 class="feature-title">Fully Responsive</h3>
+                    <p class="feature-description">
+                        Perfect experience across all devices - desktop, tablet, and mobile.
+                    </p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">⚙️</div>
+                    <h3 class="feature-title">Highly Scalable</h3>
+                    <p class="feature-description">
+                        Built to grow with your business, from startup to enterprise level.
+                    </p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💡</div>
+                    <h3 class="feature-title">Innovative Solutions</h3>
+                    <p class="feature-description">
+                        Cutting-edge technology and creative problem-solving approaches.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Our Services</h2>
+                <p class="section-subtitle">Comprehensive solutions for your business needs</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-number">01</div>
+                    <h3 class="service-title">Web Development</h3>
+                    <p class="service-description">
+                        Custom web applications built with the latest technologies and frameworks.
+                    </p>
+                    <ul class="service-features">
+                        <li>React & Vue.js Development</li>
+                        <li>Progressive Web Apps</li>
+                        <li>E-commerce Solutions</li>
+                        <li>API Integration</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <div class="service-number">02</div>
+                    <h3 class="service-title">Mobile Development</h3>
+                    <p class="service-description">
+                        Native and cross-platform mobile apps for iOS and Android devices.
+                    </p>
+                    <ul class="service-features">
+                        <li>iOS & Android Apps</li>
+                        <li>React Native Development</li>
+                        <li>UI/UX Design</li>
+                        <li>App Store Optimization</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <div class="service-number">03</div>
+                    <h3 class="service-title">Cloud Solutions</h3>
+                    <p class="service-description">
+                        Scalable cloud infrastructure and deployment strategies.
+                    </p>
+                    <ul class="service-features">
+                        <li>AWS & Azure Setup</li>
+                        <li>DevOps & CI/CD</li>
+                        <li>Cloud Migration</li>
+                        <li>Performance Optimization</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <div class="service-number">04</div>
+                    <h3 class="service-title">AI & Machine Learning</h3>
+                    <p class="service-description">
+                        Intelligent solutions powered by artificial intelligence and ML.
+                    </p>
+                    <ul class="service-features">
+                        <li>Predictive Analytics</li>
+                        <li>Natural Language Processing</li>
+                        <li>Computer Vision</li>
+                        <li>Automation & Optimization</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2 class="section-title">About Ultron</h2>
+                    <p class="about-description">
+                        We are a team of passionate developers, designers, and innovators dedicated to 
+                        creating exceptional digital experiences. With over 15 years of combined experience, 
+                        we've helped hundreds of businesses transform their ideas into reality.
+                    </p>
+                    <p class="about-description">
+                        Our mission is to leverage cutting-edge technology to solve complex problems and 
+                        deliver solutions that exceed expectations. We believe in the power of innovation, 
+                        collaboration, and continuous improvement.
+                    </p>
+                    <div class="about-values">
+                        <div class="value-item">
+                            <h4>🎯 Mission-Driven</h4>
+                            <p>Focused on delivering real value</p>
+                        </div>
+                        <div class="value-item">
+                            <h4>🤝 Client-Centered</h4>
+                            <p>Your success is our priority</p>
+                        </div>
+                        <div class="value-item">
+                            <h4>🌟 Excellence</h4>
+                            <p>Quality in everything we do</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <div class="image-placeholder">
+                        <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="100" cy="100" r="80" fill="#6366f1" opacity="0.2"/>
+                            <circle cx="100" cy="100" r="60" fill="#6366f1" opacity="0.3"/>
+                            <circle cx="100" cy="100" r="40" fill="#6366f1" opacity="0.4"/>
+                            <circle cx="100" cy="100" r="20" fill="#6366f1"/>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Get In Touch</h2>
+                <p class="section-subtitle">Let's discuss your next project</p>
+            </div>
+            <div class="contact-content">
+                <form class="contact-form" id="contactForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <input type="text" id="subject" name="subject" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="6" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Send Message</button>
+                </form>
+                <div class="contact-info">
+                    <div class="info-item">
+                        <div class="info-icon">📧</div>
+                        <div class="info-text">
+                            <h4>Email</h4>
+                            <p>contact@ultron.tech</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon">📱</div>
+                        <div class="info-text">
+                            <h4>Phone</h4>
+                            <p>+1 (555) 123-4567</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon">📍</div>
+                        <div class="info-text">
+                            <h4>Location</h4>
+                            <p>Silicon Valley, CA</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon">🕒</div>
+                        <div class="info-text">
+                            <h4>Business Hours</h4>
+                            <p>Mon - Fri: 9AM - 6PM</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="formMessage" class="form-message"></div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="logo">
+                        <span class="logo-icon">⚡</span>
+                        <span class="logo-text">ULTRON</span>
+                    </div>
+                    <p class="footer-description">
+                        Innovation through technology. Building the future, one solution at a time.
+                    </p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Company</h4>
+                        <ul>
+                            <li><a href="#about">About Us</a></li>
+                            <li><a href="#services">Services</a></li>
+                            <li><a href="#contact">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Resources</h4>
+                        <ul>
+                            <li><a href="#features">Features</a></li>
+                            <li><a href="#home">Documentation</a></li>
+                            <li><a href="#home">Blog</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Legal</h4>
+                        <ul>
+                            <li><a href="#home">Privacy Policy</a></li>
+                            <li><a href="#home">Terms of Service</a></li>
+                            <li><a href="#home">Cookie Policy</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Ultron. All rights reserved.</p>
+                <div class="social-links">
+                    <a href="#" aria-label="Twitter">𝕏</a>
+                    <a href="#" aria-label="LinkedIn">in</a>
+                    <a href="#" aria-label="GitHub">⚡</a>
+                </div>
+            </div>
         </div>
     </footer>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop" class="back-to-top" aria-label="Back to top">↑</button>
 
     <script src="script.js"></script>
 </body>
