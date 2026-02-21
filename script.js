@@ -72,8 +72,16 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 // Animated counter for hero stats
 function animateCounter(element) {
     const target = parseInt(element.getAttribute('data-target'));
+    
+    // Validate target is a valid number
+    if (isNaN(target) || target < 0) {
+        console.warn('Invalid data-target attribute for counter animation');
+        return;
+    }
+    
     const duration = 2000; // 2 seconds
-    const increment = target / (duration / 16); // 60fps
+    const FRAME_DURATION = 16; // ~60fps (1000ms/60 ≈ 16.67ms)
+    const increment = target / (duration / FRAME_DURATION);
     let current = 0;
     
     const updateCounter = () => {
@@ -215,11 +223,11 @@ window.addEventListener('scroll', () => {
 const serviceCards = document.querySelectorAll('.service-card');
 serviceCards.forEach(card => {
     card.addEventListener('mouseenter', function() {
-        this.style.transform = 'translateY(-5px) scale(1.02)';
+        this.style.transition = 'transform 0.3s ease, border-color 0.3s ease';
     });
     
     card.addEventListener('mouseleave', function() {
-        this.style.transform = 'translateY(0) scale(1)';
+        this.style.transition = 'transform 0.3s ease, border-color 0.3s ease';
     });
 });
 
@@ -262,6 +270,3 @@ style.textContent = `
     }
 `;
 document.head.appendChild(style);
-
-// Log page loaded
-console.log('Ultron website loaded successfully! 🚀');
