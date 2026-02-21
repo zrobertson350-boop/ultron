@@ -21,9 +21,20 @@ A modern, professional website showcasing cutting-edge technology solutions. Bui
 5. **Contact** - Contact form and information
 6. **Footer** - Links and social media
 
-## 🚀 How to Launch
+## 🚀 Quick Start Guide
 
-### Option 1: Quick Launch (Recommended)
+### Step 1: Open Terminal/Command Prompt
+
+Navigate to the ultron directory:
+```bash
+cd /path/to/ultron
+```
+
+### Step 2: Launch the Server
+
+Choose your preferred method:
+
+#### Option 1: Quick Launch (Recommended)
 
 **On Linux/Mac:**
 ```bash
@@ -35,36 +46,66 @@ A modern, professional website showcasing cutting-edge technology solutions. Bui
 launch.bat
 ```
 
-### Option 2: Using npm
+#### Option 2: Using npm
 
 ```bash
 npm start
 ```
 
-### Option 3: Using Python directly
+#### Option 3: Using Python directly
 
-**Python 3 (Recommended):**
 ```bash
 python3 -m http.server 8000
 ```
 
-**Or if 'python' points to Python 3:**
-```bash
-python -m http.server 8000
-```
+### Step 3: Open in Browser
 
-### Option 4: Open directly in browser
-
-Simply open `index.html` in your web browser.
-
-## 🌐 After Launching
-
-Once the server is running, open your browser and navigate to:
+Once you see "Serving HTTP on 0.0.0.0 port 8000", open your browser and go to:
 ```
 http://localhost:8000
 ```
 
+You should see the Ultron homepage with:
+- ⚡ ULTRON logo in the top left
+- "Innovation Through Technology" title
+- Animated statistics (500, 250, 15)
+
+### Step 4: Stop the Server
+
 Press `Ctrl+C` in the terminal to stop the server.
+
+## 🆘 Troubleshooting
+
+**Not working?** See the detailed [TROUBLESHOOTING.md](TROUBLESHOOTING.md) guide for:
+- Port already in use errors
+- Python not found errors
+- Page not loading issues
+- Missing styles or broken layout
+- And more common issues
+
+**Quick fixes:**
+- Make sure you're in the ultron directory
+- Check if port 8000 is already in use
+- Try a different browser
+- Clear your browser cache (Ctrl+Shift+R)
+
+## ✅ Verification
+
+The website is working correctly if you see:
+
+**In Terminal:**
+```
+🚀 Launching Ultron Website...
+⚡ Ultron will be available at: http://localhost:8000
+Serving HTTP on 0.0.0.0 port 8000 (http://0.0.0.0:8000/) ...
+```
+
+**In Browser:**
+- Navigation menu (Home, Features, Services, About, Contact)
+- Hero section with gradient text
+- Animated counter statistics
+- Smooth scrolling
+- Contact form
 
 ## 🎨 Design Features
 
